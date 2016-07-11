@@ -1,5 +1,8 @@
+const chai = require('chai');
+const expect = chai.expect;
+
 describe('the greet function', function() {
   it('should greet the world', function() {
-    throw new Error('some error');
+    expect(true).to.be(false);
   });
 });
