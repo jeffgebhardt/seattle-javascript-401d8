@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var cowsay = require(__dirname + '/../lib/cowsay');
+
+var cowsaycli = exports = module.exports = function(string, writeStream) {
+  writeStream = writeStream || process.stdout;
+  string = string || process.argv[2];
+  string = string || '';
+  writeStream.write(cowsay(string));
+};
+
+cowsaycli();
