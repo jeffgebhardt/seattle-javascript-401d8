@@ -24,7 +24,7 @@ describe('chat server', function() {
       expect(data.toString()).to.eql(messages.pop());
       if (toSend.length) 
         client1.write(toSend.pop());
-      else
+      else 
         client1.end();
     });
 
