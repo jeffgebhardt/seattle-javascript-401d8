@@ -1,10 +1,6 @@
 'use strict';
 
 const fsPromise = require('./lib/fs_promise');
-let file = fsPromise(process.argv[2]);
-console.log('hello from index');
-file.then((data) => {
-  console.log(data.toString('base64'));
-  return data;
-}, () => process.exit(1));
-
+let fileNames = process.argv.slice(2);
+let files = fileNames.map((file) => fsPromise(file));
+files.map((promise) => promise.catch(() => process.exit(1)));
